@@ -1,29 +1,58 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using week4_BankAPP.Logics;
+using week4_BankAPP.User_Inerface;
 
 namespace week4_BankAPP.User_Inerface
 {
     public partial class UserDashBoard : Form
     {
+        //fmWlc fmWlc1 = new fmWlc();
         
         public UserDashBoard()
         {
             
             InitializeComponent();
-            //lblWelcomeUser.Text = customer;
+            
         }
 
-        private void UserDashBoard_Load(object sender, EventArgs e)
+        //passing the user email to another page
+        public UserDashBoard(string UserEmail)
         {
-            //lblWelcomeUser.Text =
+            userEmail = UserEmail;
+            InitializeComponent();
+
+        }
+        public static List<UserModel> Customer = new List<UserModel>();
+
+        //Declaring the User Email public
+        public static string userEmail;
+
+        private void UserDashBoard_Load(object sender, EventArgs e)
+        {          
+            
+
+            var customer = File.ReadAllText(@"Customer.Json");
+            var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
+            
+            var loggedin_user = result.FirstOrDefault(x=>x.Email==userEmail);
+            lblWelcomeUser.Text = ($"{loggedin_user.FirstName} {loggedin_user.LastName}");
+            lblaccountnumberDisplay.Text = ($"ACC NO: {loggedin_user.AccountNumber}");
+            lblAccountType.Text = ($"{loggedin_user.AccountType}");
+            lblAmountDisplay.Text = ($"ACC BAL: {loggedin_user.Balance.ToString()}");
+                       
+
+
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -73,7 +102,8 @@ namespace week4_BankAPP.User_Inerface
 
         private void picCloase_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.ExitThread();
+            //this.Close();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -108,6 +138,13 @@ namespace week4_BankAPP.User_Inerface
         private void lblWelcome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblLogOut_Click(object sender, EventArgs e)
+        {
+            fmWlc fmWlc = new fmWlc();
+            this.Hide();
+            fmWlc.Show();
         }
     }
 }

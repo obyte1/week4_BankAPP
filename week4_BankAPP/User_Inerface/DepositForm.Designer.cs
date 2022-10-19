@@ -79,6 +79,7 @@
             this.btnDeposit.TabIndex = 3;
             this.btnDeposit.Text = "DEPOSIT";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // SuccessMsgDeposit
             // 

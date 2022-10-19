@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace week4_BankAPP.Logics
 {
-    internal class UserModel
+    public class UserModel
     {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-        public string AccountName
-        {
-            get { return FirstName + ", " + LastName; }
-        }
+        //public string AccountName
+        //{
+        //    get { return FirstName + ", " + LastName; }
+        //}
 
         public string Email { get; set; }
 
@@ -25,11 +26,14 @@ namespace week4_BankAPP.Logics
 
         public string AccountType { get; set; }
 
-        public decimal? Balance { get; set; }
+        public double? Balance { get; set; }
 
-        public List<TransactionModel> TransactionList { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public UserModel(string firstName, string lastName, string email, string password, string accountNumber, string accountType)
+
+        //public List<TransactionModel> TransactionList { get; set; }
+
+        public UserModel(string firstName, string lastName, string email, string password, string accountNumber, string accountType, string PhoneNo, double Balance)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -37,7 +41,10 @@ namespace week4_BankAPP.Logics
             this.password = password;
             AccountNumber = accountNumber;
             AccountType = accountType;
-           // Balance = balance;
+            this.Balance = Balance;
+            PhoneNumber = PhoneNo;
+
+
            // TransactionList = transactionList;
         }
     }

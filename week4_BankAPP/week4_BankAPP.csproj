@@ -60,6 +60,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Logics\Login.cs" />
+    <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\TransactionModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />

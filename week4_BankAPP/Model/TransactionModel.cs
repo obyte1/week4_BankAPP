@@ -8,17 +8,18 @@ namespace week4_BankAPP.Logics
 {
     public class TransactionModel
     {
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string AccountNumber { get; set; }
 
         public string TransactionId { get; set; }
 
-        public DateTime? DateTime { get; set; }
+        public DateTime DateTime { get; set; } = DateTime.Now;  
 
         public string Description { get; set; }
 
-        public decimal? outAmount { get; set; }
+        public decimal OutAmount { get; set; }
 
-        public decimal? Balance { get; set; }
+        public decimal Balance { get; set; }
 
 
 

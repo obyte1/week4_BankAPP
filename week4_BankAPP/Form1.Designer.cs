@@ -38,6 +38,7 @@
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlRegister = new System.Windows.Forms.Panel();
+            this.lblRegisterError = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -197,6 +198,7 @@
             // 
             // pnlRegister
             // 
+            this.pnlRegister.Controls.Add(this.lblRegisterError);
             this.pnlRegister.Controls.Add(this.panel12);
             this.pnlRegister.Controls.Add(this.lblBackToLogin);
             this.pnlRegister.Controls.Add(this.panel13);
@@ -206,10 +208,20 @@
             this.pnlRegister.Controls.Add(this.btnRegister);
             this.pnlRegister.Controls.Add(this.panel5);
             this.pnlRegister.Controls.Add(this.label6);
-            this.pnlRegister.Location = new System.Drawing.Point(3, 6);
+            this.pnlRegister.Location = new System.Drawing.Point(0, 4);
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(889, 556);
             this.pnlRegister.TabIndex = 8;
+            // 
+            // lblRegisterError
+            // 
+            this.lblRegisterError.AutoSize = true;
+            this.lblRegisterError.ForeColor = System.Drawing.Color.Red;
+            this.lblRegisterError.Location = new System.Drawing.Point(290, 41);
+            this.lblRegisterError.Name = "lblRegisterError";
+            this.lblRegisterError.Size = new System.Drawing.Size(51, 16);
+            this.lblRegisterError.TabIndex = 12;
+            this.lblRegisterError.Text = "label13";
             // 
             // panel12
             // 
@@ -818,6 +830,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.TextBox txtPhoneNo;
+        private System.Windows.Forms.Label lblRegisterError;
     }
 }
 
