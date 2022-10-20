@@ -208,7 +208,7 @@
             this.pnlRegister.Controls.Add(this.btnRegister);
             this.pnlRegister.Controls.Add(this.panel5);
             this.pnlRegister.Controls.Add(this.label6);
-            this.pnlRegister.Location = new System.Drawing.Point(0, 4);
+            this.pnlRegister.Location = new System.Drawing.Point(3, 4);
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(889, 556);
             this.pnlRegister.TabIndex = 8;

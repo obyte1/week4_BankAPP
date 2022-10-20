@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using week4_BankAPP.Logics;
+using week4_BankAPP.Model;
 using week4_BankAPP.User_Inerface;
 
 namespace week4_BankAPP.User_Inerface
@@ -42,14 +43,15 @@ namespace week4_BankAPP.User_Inerface
             
 
             var customer = File.ReadAllText(@"Customer.Json");
-            var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
-            
-            var loggedin_user = result.FirstOrDefault(x=>x.Email==userEmail);
+            var result = JsonConvert.DeserializeObject<JsonFileModel>(customer);
+            //var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
+
+            var loggedin_user = result.Users.FirstOrDefault(x => x.Email == userEmail);
             lblWelcomeUser.Text = ($"{loggedin_user.FirstName} {loggedin_user.LastName}");
             lblaccountnumberDisplay.Text = ($"ACC NO: {loggedin_user.AccountNumber}");
             lblAccountType.Text = ($"{loggedin_user.AccountType}");
             lblAmountDisplay.Text = ($"ACC BAL: {loggedin_user.Balance.ToString()}");
-                       
+
 
 
 

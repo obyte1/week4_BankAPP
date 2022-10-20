@@ -11,7 +11,7 @@ using week4_BankAPP.User_Inerface;
 using System.IO;
 using week4_BankAPP.Logics;
 using Newtonsoft.Json;
-
+using week4_BankAPP.Model;
 
 namespace week4_BankAPP
 {
@@ -29,7 +29,7 @@ namespace week4_BankAPP
         {
             InitializeComponent();
         }
-        public string Firstname;       
+        //public string Firstname;       
 
         public static readonly List<UserModel> Customer = new List<UserModel>();
 
@@ -93,11 +93,30 @@ namespace week4_BankAPP
                 {
                     string path = @"C:\Users\Decagon\source\repos\week4_BankAPP\week4_BankAPP\bin\Debug\Customer.Json";
                     var customer = File.ReadAllText(path);
-                    var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
+                    var result = JsonConvert.DeserializeObject<JsonFileModel>(customer);
 
+                    if (result == null)
+                    {
+                        result = new JsonFileModel();
+                    }
+                    UserModel getUser = null;
+
+                    foreach (var user in result.Users)
+                    {
+                        if (user != null && user.Email == txtEmail.Text)
+                        {
+                            getUser = user;
+                            break;
+                        }
+                        
+                    }
+                    if (getUser != null)
+                    {
+                        MessageBox.Show("Email already Exist");
+                    }
 
                     var person = new UserModel(firstname, lastname, email, password, AccountNumber, accounttype, phoneno, Balance);
-                    result.Add(person);
+                    result.Users.Add(person);
 
 
                     var resultJson = JsonConvert.SerializeObject(result);                    
@@ -137,8 +156,12 @@ namespace week4_BankAPP
             string path = @"C:\Users\Decagon\source\repos\week4_BankAPP\week4_BankAPP\bin\Debug\Customer.Json";
             var customer = File.ReadAllText(path);
 
-            var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
-            if (result.Any(x=>x.Email== txtUsername.Text && x.password==txtPassword.Text))
+            //var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
+            var result = JsonConvert.DeserializeObject<JsonFileModel>(customer);
+
+
+
+            if (result.Users.Any(x=>x.Email== txtUsername.Text && x.password==txtPassword.Text))
             {
                 this.Hide();
                 
