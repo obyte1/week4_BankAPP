@@ -95,6 +95,7 @@ namespace week4_BankAPP
                     var customer = File.ReadAllText(path);
                     var result = JsonConvert.DeserializeObject<JsonFileModel>(customer);
 
+
                     if (result == null)
                     {
                         result = new JsonFileModel();
@@ -114,24 +115,28 @@ namespace week4_BankAPP
                     {
                         MessageBox.Show("Email already Exist");
                     }
-
-                    var person = new UserModel(firstname, lastname, email, password, AccountNumber, accounttype, phoneno, Balance);
-                    result.Users.Add(person);
-
-
-                    var resultJson = JsonConvert.SerializeObject(result);                    
-                    var fileinfo = new FileInfo(path);
-                    using (var users = new StreamWriter(fileinfo.Open(FileMode.Truncate)))
+                    else
                     {
-                        
-                        users.Write(resultJson);
-                        
+                        var person = new UserModel(firstname, lastname, email, password, AccountNumber, accounttype, phoneno, Balance);
+                        result.Users.Add(person);
+
+
+                        var resultJson = JsonConvert.SerializeObject(result);
+                        var fileinfo = new FileInfo(path);
+                        using (var users = new StreamWriter(fileinfo.Open(FileMode.Truncate)))
+                        {
+
+                            users.Write(resultJson);
+
+                        }
+
+
+                        MessageBox.Show("Record Inserted Successfully, Please click Ok to Login");
+                        pnlRegister.Visible = false;
+                        pnlLogin.Visible = true;
+
                     }
 
-
-                    MessageBox.Show("Record Inserted Successfully, Please click Ok to Login");
-                    pnlRegister.Visible = false;
-                    pnlLogin.Visible = true;
 
                 }
                 catch (Exception ex)
@@ -150,9 +155,7 @@ namespace week4_BankAPP
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //emailDb = txtEmail.Text;
-            //if (txtEmail.Text != "" && txtPassword.Text != "")
-            //{
+            
             string path = @"C:\Users\Decagon\source\repos\week4_BankAPP\week4_BankAPP\bin\Debug\Customer.Json";
             var customer = File.ReadAllText(path);
 
@@ -167,6 +170,10 @@ namespace week4_BankAPP
                 
                 UserDashBoard userDashBoard = new UserDashBoard(txtUsername.Text);
                 DepositForm depositForm = new DepositForm(txtUsername.Text);
+                WithdrawalForm withdrawalForm = new WithdrawalForm(txtUsername.Text);
+                TransferForm transferForm = new TransferForm(txtUsername.Text);
+                PrintStatementForm printStatementForm = new PrintStatementForm(txtUsername.Text);
+                CheckBalanceForm checkBalanceForm = new CheckBalanceForm(txtUsername.Text);
                 userDashBoard.Show();
             }
             else
@@ -209,10 +216,25 @@ namespace week4_BankAPP
         }
 
 
-        private void generatAn_Click(object sender, EventArgs e)
+        //private void generatAn_Click(object sender, EventArgs e)
+        //{
+        //    generateAccountnum();
+        //    MessageBox.Show(AccountNumber);
+        //}
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
         {
-            generateAccountnum();
-            MessageBox.Show(AccountNumber);
+
         }
+
+        private void txtCreatePassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //    private void panel13_Paint(object sender, PaintEventArgs e)
+        //    {
+
+        //    }
     }
 }

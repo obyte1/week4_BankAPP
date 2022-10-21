@@ -208,7 +208,7 @@
             this.pnlRegister.Controls.Add(this.btnRegister);
             this.pnlRegister.Controls.Add(this.panel5);
             this.pnlRegister.Controls.Add(this.label6);
-            this.pnlRegister.Location = new System.Drawing.Point(3, 4);
+            this.pnlRegister.Location = new System.Drawing.Point(0, 4);
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(889, 556);
             this.pnlRegister.TabIndex = 8;
@@ -328,6 +328,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(250, 21);
             this.txtLastName.TabIndex = 1;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // panel11
             // 
@@ -480,6 +481,7 @@
             this.txtCreatePassword.Name = "txtCreatePassword";
             this.txtCreatePassword.Size = new System.Drawing.Size(233, 21);
             this.txtCreatePassword.TabIndex = 4;
+            this.txtCreatePassword.TextChanged += new System.EventHandler(this.txtCreatePassword_TextChanged);
             // 
             // btnRegister
             // 

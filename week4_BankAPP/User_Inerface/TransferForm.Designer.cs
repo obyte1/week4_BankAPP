@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAccountTrf = new System.Windows.Forms.TextBox();
+            this.txtAmountTrf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             this.errorMsgTransfer = new System.Windows.Forms.Label();
             this.successMsgTransfer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtAccountTrf
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(304, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 30);
-            this.textBox1.TabIndex = 0;
+            this.txtAccountTrf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountTrf.Location = new System.Drawing.Point(304, 158);
+            this.txtAccountTrf.Name = "txtAccountTrf";
+            this.txtAccountTrf.Size = new System.Drawing.Size(317, 30);
+            this.txtAccountTrf.TabIndex = 0;
             // 
-            // textBox2
+            // txtAmountTrf
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(304, 213);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 30);
-            this.textBox2.TabIndex = 1;
+            this.txtAmountTrf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmountTrf.Location = new System.Drawing.Point(304, 213);
+            this.txtAmountTrf.Name = "txtAmountTrf";
+            this.txtAmountTrf.Size = new System.Drawing.Size(317, 30);
+            this.txtAmountTrf.TabIndex = 1;
             // 
             // label1
             // 
@@ -73,14 +73,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Amount:";
             // 
-            // button1
+            // btnTransfer
             // 
-            this.button1.Location = new System.Drawing.Point(371, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "TRANSFER";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTransfer.Location = new System.Drawing.Point(371, 314);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(130, 48);
+            this.btnTransfer.TabIndex = 4;
+            this.btnTransfer.Text = "TRANSFER";
+            this.btnTransfer.UseVisualStyleBackColor = true;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // errorMsgTransfer
             // 
@@ -111,11 +112,11 @@
             this.ClientSize = new System.Drawing.Size(840, 674);
             this.Controls.Add(this.successMsgTransfer);
             this.Controls.Add(this.errorMsgTransfer);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAmountTrf);
+            this.Controls.Add(this.txtAccountTrf);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(367, 74);
             this.Name = "TransferForm";
@@ -128,11 +129,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAccountTrf;
+        private System.Windows.Forms.TextBox txtAmountTrf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Label errorMsgTransfer;
         private System.Windows.Forms.Label successMsgTransfer;
     }

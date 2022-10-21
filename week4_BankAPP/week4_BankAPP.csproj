@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginRegister.Designer.cs">
+      <DependentUpon>LoginRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Logics\Login.cs" />
     <Compile Include="Model\AccountModel.cs" />
@@ -78,6 +78,12 @@
     <Compile Include="User_Inerface\DepositForm.Designer.cs">
       <DependentUpon>DepositForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Inerface\PrintStatementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Inerface\PrintStatementForm.Designer.cs">
+      <DependentUpon>PrintStatementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Inerface\TransferForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,8 +102,8 @@
     <Compile Include="User_Inerface\WithdrawalForm.Designer.cs">
       <DependentUpon>WithdrawalForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="LoginRegister.resx">
+      <DependentUpon>LoginRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Inerface\DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Inerface\PrintStatementForm.resx">
+      <DependentUpon>PrintStatementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Inerface\TransferForm.resx">
       <DependentUpon>TransferForm.cs</DependentUpon>

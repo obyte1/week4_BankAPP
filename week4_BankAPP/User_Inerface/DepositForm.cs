@@ -17,7 +17,7 @@ namespace week4_BankAPP.User_Inerface
 {
     public partial class DepositForm : Form
     {
-        //private readonly string userEmail;
+        
 
         public DepositForm()
         {

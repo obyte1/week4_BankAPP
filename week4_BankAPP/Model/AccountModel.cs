@@ -9,7 +9,7 @@ namespace week4_BankAPP.Model
 {
     public class AccountModel
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        
         public string UserID { get; set; }
         public string AccountNumber { get; set; }
         public AccountType Type { get; set; }

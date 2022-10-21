@@ -39,9 +39,8 @@ namespace week4_BankAPP.User_Inerface
         public static string userEmail;
 
         private void UserDashBoard_Load(object sender, EventArgs e)
-        {          
+        {        
             
-
             var customer = File.ReadAllText(@"Customer.Json");
             var result = JsonConvert.DeserializeObject<JsonFileModel>(customer);
             //var result = JsonConvert.DeserializeObject<List<UserModel>>(customer);
@@ -51,9 +50,6 @@ namespace week4_BankAPP.User_Inerface
             lblaccountnumberDisplay.Text = ($"ACC NO: {loggedin_user.AccountNumber}");
             lblAccountType.Text = ($"{loggedin_user.AccountType}");
             lblAmountDisplay.Text = ($"ACC BAL: {loggedin_user.Balance.ToString()}");
-
-
-
 
         }
 
@@ -117,6 +113,9 @@ namespace week4_BankAPP.User_Inerface
         private void label2_Click(object sender, EventArgs e)
         {
             
+
+
+
             withdrawalForm.MdiParent=this;
             withdrawalForm.Show();
 
@@ -147,6 +146,11 @@ namespace week4_BankAPP.User_Inerface
             fmWlc fmWlc = new fmWlc();
             this.Hide();
             fmWlc.Show();
+        }
+
+        private void lblAmountDisplay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

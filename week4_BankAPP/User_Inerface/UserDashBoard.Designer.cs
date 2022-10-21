@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picCloase = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAccountType = new System.Windows.Forms.Label();
+            this.lblAmountDisplay = new System.Windows.Forms.Label();
+            this.lblaccountnumberDisplay = new System.Windows.Forms.Label();
             this.lblLogOut = new System.Windows.Forms.Label();
             this.pbLogOut = new System.Windows.Forms.PictureBox();
             this.lblWelcomeUser = new System.Windows.Forms.Label();
@@ -53,9 +56,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblDeposit = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblaccountnumberDisplay = new System.Windows.Forms.Label();
-            this.lblAmountDisplay = new System.Windows.Forms.Label();
-            this.lblAccountType = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCloase)).BeginInit();
             this.panel2.SuspendLayout();
@@ -131,6 +131,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(357, 697);
             this.panel2.TabIndex = 1;
+            // 
+            // lblAccountType
+            // 
+            this.lblAccountType.AutoSize = true;
+            this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAccountType.Location = new System.Drawing.Point(118, 97);
+            this.lblAccountType.Name = "lblAccountType";
+            this.lblAccountType.Size = new System.Drawing.Size(98, 22);
+            this.lblAccountType.TabIndex = 11;
+            this.lblAccountType.Text = "account no";
+            // 
+            // lblAmountDisplay
+            // 
+            this.lblAmountDisplay.AutoSize = true;
+            this.lblAmountDisplay.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblAmountDisplay.Location = new System.Drawing.Point(125, 122);
+            this.lblAmountDisplay.Name = "lblAmountDisplay";
+            this.lblAmountDisplay.Size = new System.Drawing.Size(76, 16);
+            this.lblAmountDisplay.TabIndex = 10;
+            this.lblAmountDisplay.Text = "account bal";
+            this.lblAmountDisplay.Click += new System.EventHandler(this.lblAmountDisplay_Click);
+            // 
+            // lblaccountnumberDisplay
+            // 
+            this.lblaccountnumberDisplay.AutoSize = true;
+            this.lblaccountnumberDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaccountnumberDisplay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblaccountnumberDisplay.Location = new System.Drawing.Point(123, 78);
+            this.lblaccountnumberDisplay.Name = "lblaccountnumberDisplay";
+            this.lblaccountnumberDisplay.Size = new System.Drawing.Size(98, 22);
+            this.lblaccountnumberDisplay.TabIndex = 9;
+            this.lblaccountnumberDisplay.Text = "account no";
             // 
             // lblLogOut
             // 
@@ -343,38 +376,6 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "welcome:";
             this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
-            // 
-            // lblaccountnumberDisplay
-            // 
-            this.lblaccountnumberDisplay.AutoSize = true;
-            this.lblaccountnumberDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblaccountnumberDisplay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblaccountnumberDisplay.Location = new System.Drawing.Point(123, 78);
-            this.lblaccountnumberDisplay.Name = "lblaccountnumberDisplay";
-            this.lblaccountnumberDisplay.Size = new System.Drawing.Size(98, 22);
-            this.lblaccountnumberDisplay.TabIndex = 9;
-            this.lblaccountnumberDisplay.Text = "account no";
-            // 
-            // lblAmountDisplay
-            // 
-            this.lblAmountDisplay.AutoSize = true;
-            this.lblAmountDisplay.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblAmountDisplay.Location = new System.Drawing.Point(125, 122);
-            this.lblAmountDisplay.Name = "lblAmountDisplay";
-            this.lblAmountDisplay.Size = new System.Drawing.Size(76, 16);
-            this.lblAmountDisplay.TabIndex = 10;
-            this.lblAmountDisplay.Text = "account bal";
-            // 
-            // lblAccountType
-            // 
-            this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccountType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAccountType.Location = new System.Drawing.Point(118, 97);
-            this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(98, 22);
-            this.lblAccountType.TabIndex = 11;
-            this.lblAccountType.Text = "account no";
             // 
             // UserDashBoard
             // 
